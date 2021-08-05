@@ -1,0 +1,1 @@
+if exist _out rmdir /S /Q _out

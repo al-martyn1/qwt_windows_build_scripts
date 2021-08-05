@@ -1,0 +1,1 @@
+call make_msvc.bat >make_msvc.log 2>&1
