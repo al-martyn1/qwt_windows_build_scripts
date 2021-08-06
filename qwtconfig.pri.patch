@@ -1,0 +1,20 @@
+--- "D:\\Temp\\qwt-6.2.0\\qwtconfig.pri"	2021-07-18 14:21:37.000000000 +0300
++++ "..\\qwtconfig.pri"	2021-08-06 13:17:13.094927800 +0300
+@@ -24,7 +24,7 @@
+ }
+ 
+ win32 {
+-    QWT_INSTALL_PREFIX    = C:/Qwt-$$QWT_VERSION
++    QWT_INSTALL_PREFIX    = $${QWT_INSTALL_ROOT}/Qwt-$${QWT_VERSION}/qt-$${QT_VERSION}/$${TOOLSET_PLATFORM}
+     # QWT_INSTALL_PREFIX = C:/Qwt-$$QWT_VERSION-qt-$$QT_VERSION
+ }
+ 
+@@ -155,7 +155,7 @@
+ # Otherwise you have to build them from the tests directory.
+ ######################################################################
+ 
+-QWT_CONFIG     += QwtTests
++# QWT_CONFIG     += QwtTests
+ 
+ ######################################################################
+ # When Qt has been built as framework qmake wants
