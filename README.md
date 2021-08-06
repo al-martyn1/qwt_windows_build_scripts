@@ -7,17 +7,17 @@ Applied to Qt 5.14.2 MingGW 7.3/MSVC 2017 and to Qt 5.15.2 MingGW 8.1/MSVC 2019
 
 Download QWT archive or clone it to the local drive - https://qwt.sourceforge.io/
 
-Direct link to download latest qwt-6.2.0.zip - 
+Direct link to download latest `qwt-6.2.0.zip` - 
   https://sourceforge.net/projects/qwt/files/qwt/6.2.0/qwt-6.2.0.zip/download
 
 Read installation instructions - https://qwt.sourceforge.io/qwtinstall.html
 
-Unpack qwt-6.2.0.zip to anywhere - e.g. D:\Temp\qwt-6.2.0
+Unpack `qwt-6.2.0.zip` to anywhere - e.g. `D:\Temp\qwt-6.2.0`
 
 
 ## Downloading/cloning this build scripts
 
-Go to D:\Temp\qwt-6.2.0
+Go to `D:\Temp\qwt-6.2.0`
 
     cd D:\Temp\qwt-6.2.0
 
@@ -25,12 +25,12 @@ Go to D:\Temp\qwt-6.2.0
 Execute `git clone https://github.com/al-martyn1/qwt_windows_build_scripts.git`
 
 
-Go to D:\Temp\qwt-6.2.0\qwt_windows_build_scripts
+Go to `D:\Temp\qwt-6.2.0\qwt_windows_build_scripts`
 
     cd qwt_windows_build_scripts
 
 
-Run 'apply_buil_config_patch.bat' bat file to apply required build configuration changes
+Run `apply_buil_config_patch.bat` bat file to apply required build configuration changes
 
 
 ## Setting up the environment
@@ -77,14 +77,15 @@ Build scripts automatically builds only required versions of QWT.
 
 Configure QWT installation path:
 
-  1) Rename set_qwt_install_root.bat.template to set_qwt_install_root.bat and write your path in this file
+  1) Rename `set_qwt_install_root.bat.template` to `set_qwt_install_root.bat` and write your path in this file
 
   2) Or, set up QWT_INSTALL_ROOT environmetn variable 
   
-  3) Or, keep all as is, than D:/Qwt will be applied by default
+  3) Or, keep all as is, than `D:/Qwt` will be applied by default
 
 ---
-**Note**
+**Note!**
+
 Use slashes '/' as path separator, not normal windows path separator '\\'
 ---
 
@@ -95,11 +96,12 @@ Use slashes '/' as path separator, not normal windows path separator '\\'
 Run make_all.bat or make_all_log.bat (last one writes all output to log file instead of console)
 
 ---
-**Note**
+**Note!**
+
 Building all configurations of QWT requires lot of time, maybe a few hours on a slow computer
 ---
 
-After all build scripts are done you have got the 'qwt_windeploy.bat' in the QWT_INSTALL_ROOT folder
+After all build scripts are done you have got the `qwt_windeploy.bat` in the QWT_INSTALL_ROOT folder
 
 Copy it to the folder that is listed in the PATH environment variable. Or, if you wish, you can add
 the QWT_INSTALL_ROOT folder to the PATH environment variable
@@ -142,7 +144,7 @@ You have next QWT folders tree:
                         ...
 
 
-So, set up next environment variables:
+So, set up the next environment variables:
 
     MINGW73_QWT_ROOT=D:\Qwt\Qwt-6.2.0\qt-5.14.2\mingw73
     MINGW81_QWT_ROOT=D:\Qwt\Qwt-6.2.0\qt-5.15.2\mingw81
@@ -152,7 +154,7 @@ So, set up next environment variables:
 
 ## Using QWT with MSVC
 
-For MSVC - create file 'qt.props' (example is for MSVC2017):
+For MSVC - create file `qt.props` (example is for MSVC2017):
 
 
     <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -182,12 +184,12 @@ For MSVC - create file 'qt.props' (example is for MSVC2017):
     </Project>
 
 
-In MSVC project file (.vcxproj) find line such next:
+In MSVC project file (.vcxproj) find the line such next:
 
     <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
 
 
-Add next line after that:
+Add next line after that found:
 
     <Import Project="$(ProjectDir)\qt.props" />
 
@@ -196,12 +198,12 @@ Now you can use $(QWT_LIB) and $(QWT_INC) macros in all project settings.
 
 ## Deploying the QWT library binaries with your application
 
-If the 'qwt_windeploy.bat' batch file is placed in path listed in your PATH environment variable
+If the `qwt_windeploy.bat` batch file is placed in path listed in your PATH environment variable
 you can call it from your deploy script as is:
 
     call qwt_windeploy.bat Toolset Platform Configuration DeployDestinationPath
 
-where param can be:
+where `Toolset Platform Configuration DeployDestinationPath` params can be:
 
     Toolset                 - mingw73, mingw81, msvc2017 or msvc2019
     Platform                - x86 or x64
