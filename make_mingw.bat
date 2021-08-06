@@ -41,3 +41,5 @@ if "%MINGW81_QTROOT%"=="" goto TRY_END
 
 :TRY_END
 
+@set SELF_PATH=%~dp0
+@call %SELF_PATH%\create_qwt_windeploy.bat

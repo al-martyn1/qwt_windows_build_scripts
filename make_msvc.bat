@@ -51,6 +51,8 @@ if "%MSVC2019_QTROOT%"=="" goto TRY_END
 @call %SELF_PATH%\bat\qmake_make.bat qwt       ../qwt.pro         msvc2019 x64
 @ENDLOCAL
 
+
 :TRY_END
 
-
+@set SELF_PATH=%~dp0
+@call %SELF_PATH%\create_qwt_windeploy.bat

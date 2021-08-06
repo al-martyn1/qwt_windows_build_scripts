@@ -14,19 +14,26 @@ Read installation instructions - https://qwt.sourceforge.io/qwtinstall.html
 
 Unpack qwt-6.2.0.zip to anywhere - e.g. D:\Temp\qwt-6.2.0
 
-Go to D:\Temp\qwt-6.2.0
-
 
 ## Downloading/cloning this build scripts
 
+Go to D:\Temp\qwt-6.2.0
+
+    cd D:\Temp\qwt-6.2.0
+
+
 Execute `git clone https://github.com/al-martyn1/qwt_windows_build_scripts.git`
+
 
 Go to D:\Temp\qwt-6.2.0\qwt_windows_build_scripts
 
-Run 'apply_patch.bat' bat file
+    cd qwt_windows_build_scripts
 
 
-## Setting up environment
+Run 'apply_buil_config_patch.bat' bat file to apply required build configuration changes
+
+
+## Setting up the environment
 
 Set up environment variables pointing to various Qt versions,
 which are installed on your computer.
@@ -83,14 +90,19 @@ Use slashes '/' as path separator, not normal windows path separator '\\'
 
 
 
-## Building QWT
+## Building and installing QWT
 
 Run make_all.bat or make_all_log.bat (last one writes all output to log file instead of console)
 
 ---
 **Note**
-Building all configurations of QWT requires lot of time, maybe a few hours on a slow computer.
+Building all configurations of QWT requires lot of time, maybe a few hours on a slow computer
 ---
+
+After all build scripts are done you have got the 'qwt_windeploy.bat' in the QWT_INSTALL_ROOT folder
+
+Copy it to the folder that is listed in the PATH environment variable. Or, if you wish, you can add
+the QWT_INSTALL_ROOT folder to the PATH environment variable
 
 
 ## Using QWT
@@ -180,6 +192,22 @@ Add next line after that:
     <Import Project="$(ProjectDir)\qt.props" />
 
 Now you can use $(QWT_LIB) and $(QWT_INC) macros in all project settings.
+
+
+## Deploying the QWT library binaries with your application
+
+If the 'qwt_windeploy.bat' batch file is placed in path listed in your PATH environment variable
+you can call it from your deploy script as is:
+
+    call qwt_windeploy.bat Toolset Platform Configuration DeployDestinationPath
+
+where param can be:
+
+    Toolset                 - mingw73, mingw81, msvc2017 or msvc2019
+    Platform                - x86 or x64
+    Configuration           - x86 or x64
+    DeployDestinationPath   - may be empty, in this case current dir will be used ('.' path)
+
 
 
 ## Installing QWT plugin to Qt Creator
