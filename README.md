@@ -3,6 +3,7 @@
 Applied to Qt 5.14.2 MingGW 7.3/MSVC 2017 and to Qt 5.15.2 MingGW 8.1/MSVC 2019
 
 
+
 ## Downloading QWT
 
 Download QWT archive or clone it to the local drive - https://qwt.sourceforge.io/
@@ -13,6 +14,7 @@ Direct link to download latest `qwt-6.2.0.zip` -
 Read installation instructions - https://qwt.sourceforge.io/qwtinstall.html
 
 Unpack `qwt-6.2.0.zip` to anywhere - e.g. `D:\Temp\qwt-6.2.0`
+
 
 
 ## Downloading/cloning this build scripts
@@ -31,6 +33,7 @@ Go to `D:\Temp\qwt-6.2.0\qwt_windows_build_scripts`
 
 
 Run `apply_buil_config_patch.bat` bat file to apply required build configuration changes
+
 
 
 ## Setting up the environment
@@ -93,6 +96,7 @@ Use slashes '/' as path separator, instead of normal windows path separator '\\'
 
 
 
+
 ## Building and installing QWT
 
 Run make_all.bat or make_all_log.bat (last one writes all output to log file instead of console)
@@ -110,6 +114,7 @@ After all build scripts are done you have got the `qwt_windeploy.bat` in the QWT
 
 Copy it to the folder that is listed in the PATH environment variable. Or, if you wish, you can add
 the QWT_INSTALL_ROOT folder to the PATH environment variable
+
 
 
 ## Using QWT
@@ -157,6 +162,7 @@ So, set up the next environment variables:
     MSVC2019_QWT_ROOT=D:\Qwt\Qwt-6.2.0\qt-5.15.2\msvc2019
 
 
+
 ## Using QWT with MSVC
 
 For MSVC - create file `qt.props` (example is for MSVC2017):
@@ -201,6 +207,7 @@ Add next line after that found:
 Now you can use $(QWT_LIB) and $(QWT_INC) macros in all project settings.
 
 
+
 ## Deploying the QWT library binaries with your application
 
 If the `qwt_windeploy.bat` batch file is placed in path listed in your PATH environment variable
@@ -214,6 +221,7 @@ where `Toolset Platform Configuration DeployDestinationPath` params can be:
     Platform                - x86 or x64
     Configuration           - x86 or x64
     DeployDestinationPath   - may be empty, in this case current dir will be used ('.' path)
+
 
 
 
@@ -242,6 +250,7 @@ But we recomend install it from Qt Creator:
   * Browse to 'D:\Qwt\Qwt-6.2.0\qt-5.15.2\msvc2019\x64\plugins\designer' folder and select 'qwt_designer_plugin.dll'
   * Copy %MSVC2019_QWT_ROOT%\x64\lib\qwt.dll to D:\Qt\Tools\QtCreator\lib\qtcreator\plugins folder
   * Enjoy it
+
 
 
 ## Installing QWT plugin to Qt Designer
