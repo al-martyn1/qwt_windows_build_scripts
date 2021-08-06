@@ -86,9 +86,8 @@ Configure QWT installation path:
 
 ---
 
-**Note!**
-
-Use slashes '/' as path separator, not normal windows path separator '\\'
+**Note:**
+Use slashes '/' as path separator, instead of normal windows path separator '\\'
 
 ---
 
@@ -101,8 +100,7 @@ Run make_all.bat or make_all_log.bat (last one writes all output to log file ins
 
 ---
 
-**Note!**
-
+**Note:**
 Building all configurations of QWT requires lot of time, maybe a few hours on a slow computer
 
 ---
