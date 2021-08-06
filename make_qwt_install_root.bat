@@ -1,10 +1,11 @@
+@set SELF_PATH=%~dp0
+
 @if "%QWT_INSTALL_ROOT%" NEQ "" goto QWT_INSTALL_ROOT_IS_SET
-@rem Set default value
 @set QWT_INSTALL_ROOT=D:/Qwt
 
 :QWT_INSTALL_ROOT_IS_SET
 
-@if exist set_qwt_install_root.bat call set_qwt_install_root.bat
+@if exist %SELF_PATH%\set_qwt_install_root.bat call %SELF_PATH%\set_qwt_install_root.bat
 
-@if not exist %QWT_INSTALL_ROOT% mkdir %QWT_INSTALL_ROOT%
+@if not exist %QWT_INSTALL_ROOT:/=\% mkdir %QWT_INSTALL_ROOT:/=\%
 
