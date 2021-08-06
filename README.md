@@ -83,10 +83,13 @@ Configure QWT installation path:
   
   3) Or, keep all as is, than `D:/Qwt` will be applied by default
 
+
 ---
+
 **Note!**
 
 Use slashes '/' as path separator, not normal windows path separator '\\'
+
 ---
 
 
@@ -95,11 +98,15 @@ Use slashes '/' as path separator, not normal windows path separator '\\'
 
 Run make_all.bat or make_all_log.bat (last one writes all output to log file instead of console)
 
+
 ---
+
 **Note!**
 
 Building all configurations of QWT requires lot of time, maybe a few hours on a slow computer
+
 ---
+
 
 After all build scripts are done you have got the `qwt_windeploy.bat` in the QWT_INSTALL_ROOT folder
 
