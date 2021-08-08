@@ -6,6 +6,6 @@ qwt-6.2.0_unofficial_win_binaries_qt-5.14.2_qt-5.15.2_all.zip
 
 or 
 
-qwt-6.2.0_unofficial_win_binaries_qt-latest_all.zip
+qwt-6.2.0_unofficial_win_binaries_qt5-latest_all.zip
 
 ?
