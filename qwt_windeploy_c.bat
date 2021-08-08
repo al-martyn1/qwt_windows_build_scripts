@@ -119,7 +119,7 @@
 @echo   where
 @echo     Toolset                 - mingw73, mingw81, msvc2017 or msvc2019
 @echo     Platform                - x86 or x64
-@echo     Configuration           - x86 or x64
+@echo     Configuration           - Debug or Release
 @echo     DeployDestinationPath   - may be empty, in this case current dir will be used ('.' path)
 @exit /b 1
 
