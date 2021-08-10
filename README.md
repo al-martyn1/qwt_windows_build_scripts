@@ -271,7 +271,7 @@ where `Toolset Platform Configuration DeployDestinationPath` params can be:
 
     Toolset                 - mingw73, mingw81, msvc2017 or msvc2019
     Platform                - x86 or x64
-    Configuration           - x86 or x64
+    Configuration           - Debug or Release
     DeployDestinationPath   - may be empty, in this case current dir will be used ('.' path)
 
 
