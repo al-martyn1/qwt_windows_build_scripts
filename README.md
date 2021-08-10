@@ -165,7 +165,7 @@ So, set up the next environment variables:
 
 ## Using QWT with MSVC
 
-For MSVC - create file `qt.props` (example is for MSVC2017):
+Create the file `qt.props` (example is for MSVC2017):
 
 
     <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -206,6 +206,58 @@ Add next line after that found:
 
 Now you can use $(QWT_LIB) and $(QWT_INC) macros in all project settings.
 
+
+
+## Using QWT with Qt Creator/qmake
+
+Create the file `qwt.pri`:
+
+    win32-msvc* {
+    
+        MSVC_VER = $$(VisualStudioVersion)
+    
+        equals(MSVC_VER, 15.0){
+            QWT_ROOT=$$(MSVC2017_QWT_ROOT)
+        }
+        equals(MSVC_VER, 16.0){
+            QWT_ROOT=$$(MSVC2019_QWT_ROOT)
+        }
+    
+        QWT_PLATFORM=x86
+        contains(QMAKE_TARGET.arch, x86_64):QWT_PLATFORM=x64
+    
+    }
+    
+    win32-g++* {
+    
+        QWT_ROOT=$$(MINGW81_QWT_ROOT)
+    
+        lessThan(QT_GCC_MAJOR_VERSION, 8): QWT_ROOT=$$(MINGW73_QWT_ROOT)
+    
+        QWT_PLATFORM=x86
+        contains(QMAKE_TARGET.arch, x86_64):QWT_PLATFORM=x64
+    
+    }
+    
+    
+    QWT_INCLUDE_PATH=$${QWT_ROOT}/$${QWT_PLATFORM}/include
+    QWT_LIB_PATH=$${QWT_ROOT}/$${QWT_PLATFORM}/lib
+
+
+    win32:CONFIG(release, debug|release): QWT_LIB=qwt
+    else:win32:CONFIG(debug, debug|release): QWT_LIB=qwtd
+
+
+In your QMAKE project file `qwt_sample.pro` add the next lines:
+
+    include(qwt.pri)
+
+    INCLUDEPATH += $${QWT_INCLUDE_PATH}
+
+    LIBS += -L$${QWT_LIB_PATH} -l$${QWT_LIB}
+
+
+Now you can build your app with Qt 5.14.2 MingGW 7.3/MSVC 2017 or Qt 5.15.2 MingGW 8.1/MSVC 2019.
 
 
 ## Deploying the QWT library binaries with your application
